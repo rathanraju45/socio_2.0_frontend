@@ -1,0 +1,76 @@
+#connect-component{
+    border: solid 1px black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #000000;
+    position: relative;
+}
+
+#connect-component > img{
+    height: 80%;
+}
+
+#buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 30%;
+    height: 15%;
+    position: absolute;
+    bottom: 15%;
+}
+
+#buttons > *{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    height: 50%;
+    background-color: #ff9c00;
+    border-radius: 10px;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+@media screen and (max-width:600px) {
+
+    #connect-component > img{
+        height: 60%;
+        width: 99%;
+        position: relative;
+        bottom: 7.5%;
+    }
+
+    #buttons{
+        width: 90%;
+        bottom: 27%;
+    }
+
+    #buttons > *{
+        font-size: 5vw;
+    }
+
+}
+
+@media screen and (min-width:768px) and (max-width:885px) {
+
+    #connect-component > img{
+        position: relative;
+        bottom: 7.5%;
+    }
+
+    #buttons{
+        width: 90%;
+        bottom: 27%;
+    }
+
+    #buttons > *{
+        font-size: 4vw;
+    }
+    
+}
