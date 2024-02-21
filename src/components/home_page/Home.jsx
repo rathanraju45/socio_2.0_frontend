@@ -109,7 +109,7 @@ export default function Home() {
 
                 <div className="nav-item">
                     <div className="icon">
-                        <img src={darkMode ? default_profile_black : defatult_profile_white} alt="" />
+                        <img src={darkMode ? default_profile_black : defatult_profile_white} alt="profile-pic" />
                     </div>
                     <p className={navigationSize === 'max' ? "showP" : "hideP"}>Profile</p>
                 </div>
@@ -164,7 +164,7 @@ export default function Home() {
                     <FaBell id="notification-icon" />
                 </div>
                 {/* <HomeContent isMobile={isMobile} darkMode={darkMode} /> */}
-                <Profile />
+                <Profile darkMode={darkMode} />
             </div>
         </div>
     );
