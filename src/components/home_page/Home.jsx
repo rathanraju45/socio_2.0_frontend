@@ -15,12 +15,13 @@ import { FaBell } from "react-icons/fa";
 import './Home.css'
 import HomeContent from '../home_content/HomeContent';
 import Profile from '../profile_page/Profile';
+import Chat from '../chat_page/Chat';
 
 export default function Home() {
 
     const isMobile = window.innerWidth <= 885 ? true : false;
 
-    const [navigationSize, setNavigationSize] = useState('max');
+    const [navigationSize, setNavigationSize] = useState('min');
     const [darkMode, setDarkMode] = useState(true);
     const [moreDisplay, setMoreDisplay] = useState(false);
 
@@ -32,13 +33,19 @@ export default function Home() {
         setActiveNav(id);
     }
 
+    useEffect(() => {
+        console.log(navigationSize)
+    }, [navigationSize]);
+
     // ends
 
     // starts
     // secion to handle the navbar min-max state based on device width
 
     useEffect(() => {
-        isMobile ? setNavigationSize('min') : setNavigationSize('max');
+        if (isMobile) {
+            setNavigationSize('min');
+        }
     }, [isMobile]);
 
     // ends
@@ -163,8 +170,9 @@ export default function Home() {
                     <img src={darkMode ? socio_full_logo_black : socio_full_logo_white} alt="socio_logo" />
                     <FaBell id="notification-icon" />
                 </div>
-                {/* <HomeContent isMobile={isMobile} darkMode={darkMode} /> */}
-                <Profile darkMode={darkMode} />
+                <HomeContent isMobile={isMobile} darkMode={darkMode} />
+                {/* <Profile darkMode={darkMode} /> */}
+                <Chat />
             </div>
         </div>
     );

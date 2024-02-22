@@ -3,7 +3,7 @@ import default_profile_black from "../../assets/images/default_pic.png";
 import default_profile_white from "../../assets/images/default_pic_white.png";
 import './HomeContent.css';
 import Content from '../content/Content';
-import video from "/home/rathan/socio_frontend/src/assets/images/video.mp4";
+import video from "../../assets/images/video.mp4";
 
 export default function HomeContent({ isMobile, darkMode }) {
     return (
