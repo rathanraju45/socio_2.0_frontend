@@ -15,7 +15,7 @@ import { FaBell } from "react-icons/fa";
 import './Home.css'
 import HomeContent from '../home_content/HomeContent';
 import Profile from '../profile_page/Profile';
-import Chat from '../chat_page/Chat';
+import ChatPage from '../chat_page/ChatPage';
 
 export default function Home() {
 
@@ -32,10 +32,6 @@ export default function Home() {
     function handleNavClick(id) {
         setActiveNav(id);
     }
-
-    useEffect(() => {
-        console.log(navigationSize)
-    }, [navigationSize]);
 
     // ends
 
@@ -170,9 +166,9 @@ export default function Home() {
                     <img src={darkMode ? socio_full_logo_black : socio_full_logo_white} alt="socio_logo" />
                     <FaBell id="notification-icon" />
                 </div>
-                <HomeContent isMobile={isMobile} darkMode={darkMode} />
+                {/* <HomeContent isMobile={isMobile} darkMode={darkMode} /> */}
                 {/* <Profile darkMode={darkMode} /> */}
-                <Chat />
+                <ChatPage darkMode={darkMode} />
             </div>
         </div>
     );

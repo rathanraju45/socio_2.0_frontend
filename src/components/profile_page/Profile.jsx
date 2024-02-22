@@ -14,7 +14,7 @@ export default function Profile({ darkMode }) {
     <div id='profile-container'>
       <div id="profile-top">
         <div className="profile-pic-container">
-          <img src={darkMode ? default_profile_black : defatult_profile_white} alt="" />
+          <img src={darkMode ? default_profile_black : defatult_profile_white} alt="profile-pic" />
         </div>
         <div className="profile-details">
 
