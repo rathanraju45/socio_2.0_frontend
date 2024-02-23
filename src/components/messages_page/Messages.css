@@ -1,0 +1,63 @@
+#message-container{
+    width: 100%;
+    height: 100%;
+    border: solid 1px red;
+    box-sizing: border-box;
+}
+
+.message-header{
+    width: 100%;
+    height: 4vw;
+    border: solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.message-header > svg{
+    font-size: 1.5vw;
+    margin-left: 1%;
+}
+
+.message-profile-pic{
+    width: 3.5vw;
+    height: 3.5vw;
+    margin-left: 1%;
+}
+
+.message-profile-pic > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.message-username{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0.5%;
+}
+
+.message-username > p{
+    font-size: 1vw;
+    width: 100%;
+    height: 40%;
+    margin: 0;
+}
+
+.call-section{
+    width: 10%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.call-section > svg{
+    font-size: 2vw;
+}
+
+.call-section{
+    margin-left: auto;
+}
