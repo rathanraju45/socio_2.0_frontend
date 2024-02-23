@@ -65,3 +65,124 @@
     width: 75%;
     height: 100%;
 }
+
+@media screen and (max-width:600px) {
+
+    .chatListHide{
+        display: none;
+    }
+
+    .chatListDisplay{
+        display: flex;
+    }
+
+    .messagesHide{
+        display: none;
+    }
+
+    .messagesDisplay{
+        display: flex;
+    }
+    
+    #chat-page{
+        flex-direction: column !important;
+        height: calc(100% - 15vw);
+        overflow: scroll;
+    }
+
+    .chats{
+        border: solid 1px green;
+        width: 100%;
+    }
+
+    #chat-heading p{
+        font-size: 5vw;
+    }
+
+    .messages{
+        width: 100%;
+        height: calc(100% - 15vw);
+        border: solid 1px red;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+
+    .chatListHide{
+        display: none !important;
+    }
+
+    .chatListDisplay{
+        display: flex;
+    }
+
+    .messagesHide{
+        display: none !important;
+    }
+
+    .messagesDisplay{
+        display: flex;
+    }
+    
+    #chat-page{
+        flex-direction: column !important;
+        height: calc(100% - 15vw);
+        overflow: scroll;
+    }
+
+    .chats{
+        width: 100%;
+    }
+
+    #chat-heading p{
+        font-size: 5vw;
+    }
+
+    .messages{
+        width: 100%;
+        height: calc(100% - 15vw);
+        border: solid 1px red;
+    }
+
+}
+
+@media screen and (min-width:768px) and (max-width:885px) {
+
+    .chatListHide{
+        display: none !important;
+    }
+
+    .chatListDisplay{
+        display: flex;
+    }
+
+    .messagesHide{
+        display: none !important;
+    }
+
+    .messagesDisplay{
+        display: flex;
+    }
+    
+    #chat-page{
+        flex-direction: column !important;
+        height: calc(100% - 10vw);
+        overflow: scroll;
+    }
+
+    .chats{
+        width: 100%;
+    }
+
+    #chat-heading p{
+        font-size: 5vw;
+    }
+
+    .messages{
+        width: 100%;
+        height: calc(100% - 15vw);
+        border: solid 1px red;
+    }
+
+}
