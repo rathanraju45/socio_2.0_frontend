@@ -14,6 +14,10 @@
     box-sizing: border-box;
 }
 
+.message-header *{
+    cursor: pointer;
+}
+
 .message-header > svg{
     font-size: 1.5vw;
     margin-left: 1%;
@@ -60,6 +64,52 @@
 
 .call-section{
     margin-left: auto;
+}
+
+.messages-section{
+    width: 99%;
+    height: calc(100% - 4vw);
+    box-sizing: border-box;
+    overflow-x: scroll;
+    margin-left: 0.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.messages-section::-webkit-scrollbar{
+    display: none;
+}
+
+.message-item{
+    width: 50%;
+    margin: 0.5% 0;
+    border-radius: 10px;
+    min-height: 6%;
+    display: flex;
+    justify-content: center;
+}
+
+.message-item > p{
+    width: 98%;
+    min-height: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    border-radius: 10px;
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+    background-image: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
+    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+}
+
+.right{
+    align-self: flex-end;
+}
+
+.message-time{
+    display: none;
 }
 
 @media screen and (max-width:600px){

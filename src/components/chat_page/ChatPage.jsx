@@ -6,12 +6,12 @@ import './ChatPage.css';
 export default function ChatPage({ darkMode }) {
 
   const [chatHead, setChatHead] = useState('chats');
-  const [messagesDisplay, setMessagesDisplay] = useState(true);
+  const [messagesDisplay, setMessagesDisplay] = useState(false);
 
   return (
     <div id="chat-page">
 
-      <div className={"chats " + messagesDisplay ? " chatListHide" : " chatListDisplay"}>
+      <div className={"chats" + (messagesDisplay ? " chatListHide" : " chatListDisplay")}>
         <div id="chat-heading">
           <p onClick={() => setChatHead('chats')} style={{
             color: chatHead === 'chats' ? '#ffc900' : '#ffffff'
