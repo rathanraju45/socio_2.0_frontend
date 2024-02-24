@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link, Routes, Route } from 'react-router-dom';
 import socio_full_logo_black from "../../assets/images/socio_home_logo_black_bg.png";
 import socio_full_logo_white from "../../assets/images/socio_home_logo_white_bg.png";
 import socio_letter_black from "../../assets/images/socio_letter_logo_black_bg.png";
@@ -21,7 +22,7 @@ export default function Home() {
 
     const isMobile = window.innerWidth <= 885 ? true : false;
 
-    const [navigationSize, setNavigationSize] = useState('min');
+    const [navigationSize, setNavigationSize] = useState('max');
     const [darkMode, setDarkMode] = useState(true);
     const [moreDisplay, setMoreDisplay] = useState(false);
 
@@ -30,8 +31,15 @@ export default function Home() {
 
     const [activeNav, setActiveNav] = useState(0);
     function handleNavClick(id) {
+        if(!isMobile){
+            if(id === 2){
+                setNavigationSize('min');
+            } else{
+                setNavigationSize('max');
+            }
+        }
         setActiveNav(id);
-    }
+    };
 
     // ends
 
@@ -82,44 +90,44 @@ export default function Home() {
                     } alt="socio_logo" />
                 </div>
 
-                <div className={"nav-item" + (activeNav === 0 ? " activeNav" : '')} onClick={() => handleNavClick(0)}>
+                <Link style={{color: darkMode ? "#ffffff" : "#000000"}} to="/" className={"nav-item" + (activeNav === 0 ? " activeNav" : '')} onClick={() => handleNavClick(0)}>
                     <div className="icon">
                         <IoMdHome />
                     </div>
                     <p className={navigationSize === 'max' ? "showP" : "hideP"}>Home</p>
-                </div>
+                </Link>
 
-                <div className={"nav-item" + (activeNav === 1 ? " activeNav" : '')} onClick={() => handleNavClick(1)}>
+                <Link style={{color: darkMode ? "#ffffff" : "#000000"}} to="/search" className={"nav-item" + (activeNav === 1 ? " activeNav" : '')} onClick={() => handleNavClick(1)}>
                     <div className="icon">
                         <FaSearch />
                     </div>
                     <p className={navigationSize === 'max' ? "showP" : "hideP"}>Search</p>
-                </div>
+                </Link>
 
-                <div className={"nav-item" + (activeNav === 2 ? " activeNav" : '')} onClick={() => handleNavClick(2)}>
+                <Link style={{color: darkMode ? "#ffffff" : "#000000"}} to="/chat" className={"nav-item" + (activeNav === 2 ? " activeNav" : '')} onClick={() => handleNavClick(2)}>
                     <div className="icon">
                         <IoChatbubbleEllipsesSharp />
                     </div>
                     <p className={navigationSize === 'max' ? "showP" : "hideP"}>Chat</p>
-                </div>
+                </Link>
 
-                <div className={"nav-item" + (activeNav === 3 ? " activeNav" : '')} onClick={() => handleNavClick(3)}>
+                <Link style={{color: darkMode ? "#ffffff" : "#000000"}} to="/watch" className={"nav-item" + (activeNav === 3 ? " activeNav" : '')} onClick={() => handleNavClick(3)}>
                     <div className="icon">
                         <LuMonitorPlay />
                     </div>
                     <p className={navigationSize === 'max' ? "showP" : "hideP"}>Watch</p>
-                </div>
+                </Link>
 
-                <div className="nav-item">
+                <Link style={{color: darkMode ? "#ffffff" : "#000000"}} to="/profile" className={"nav-item" + (activeNav === 4 ? " activeNav" : '')} onClick={() => handleNavClick(4)}>
                     <div className="icon">
                         <img src={darkMode ? default_profile_black : defatult_profile_white} alt="profile-pic" />
                     </div>
                     <p className={navigationSize === 'max' ? "showP" : "hideP"}>Profile</p>
-                </div>
+                </Link>
 
-                <div className="nav-item" style={{
+                <div className={"nav-item" + (activeNav === 5 ? " activeNav" : '')} style={{
                     display: isMobile ? 'none' : 'flex'
-                }}>
+                }} onClick={() => handleNavClick(5)}>
                     <div className="icon">
                         <LuLogOut />
                     </div>
@@ -166,9 +174,13 @@ export default function Home() {
                     <img src={darkMode ? socio_full_logo_black : socio_full_logo_white} alt="socio_logo" />
                     <FaBell id="notification-icon" />
                 </div>
-                {/* <HomeContent isMobile={isMobile} darkMode={darkMode} /> */}
-                {/* <Profile darkMode={darkMode} /> */}
-                <ChatPage darkMode={darkMode} />
+
+                <Routes>
+                    <Route path="/" element={ <HomeContent isMobile={isMobile} darkMode={darkMode} /> } />
+                    <Route path="/profile" element={ <Profile darkMode={darkMode} /> } />
+                    <Route path="/chat" element={ <ChatPage darkMode={darkMode} /> } />
+                </Routes>
+
             </div>
         </div>
     );

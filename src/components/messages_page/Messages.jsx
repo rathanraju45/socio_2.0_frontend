@@ -36,14 +36,17 @@ export default function Messages({ darkMode }) {
             <div className="messages-section">
                 {
                     messages.map((item) => 
-                    <div className={"message-item " + (item.messageId%2 === 0 ? 'left' : 'right')}>
+                    <div key={item.messageId} className={"message-item " + (item.messageId%2 === 0 ? 'left' : 'right')}>
                         <p>{item.message}</p>
                         <span className="message-time">{item.timestamp}</span>
                     </div>)
                 }
                 <div ref={lastMessageRef} />
             </div>
-
+            <div id="message-input">
+                
+            </div>
+            {/* <input type="text" id="message-input" /> */}
         </div>
     )
 }

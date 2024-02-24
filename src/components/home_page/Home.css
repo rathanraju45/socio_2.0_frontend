@@ -64,6 +64,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-right: solid 1px !important;
+}
+
+#home-navigation > a{
+    text-decoration: none;
 }
 
 /* when navigation is min */
