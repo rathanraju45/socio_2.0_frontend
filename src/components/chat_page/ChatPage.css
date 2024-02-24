@@ -69,47 +69,6 @@
 @media screen and (max-width:600px) {
 
     .chatListHide{
-        display: none;
-    }
-
-    .chatListDisplay{
-        display: flex;
-    }
-
-    .messagesHide{
-        display: none;
-    }
-
-    .messagesDisplay{
-        display: flex;
-    }
-    
-    #chat-page{
-        flex-direction: column !important;
-        height: calc(100% - 15vw);
-        overflow: scroll;
-    }
-
-    .chats{
-        border: solid 1px green;
-        width: 100%;
-    }
-
-    #chat-heading p{
-        font-size: 5vw;
-    }
-
-    .messages{
-        width: 100%;
-        height: calc(100% - 15vw);
-        border: solid 1px red;
-    }
-
-}
-
-@media screen and (max-width:600px) {
-
-    .chatListHide{
         display: none !important;
     }
 
@@ -141,8 +100,7 @@
 
     .messages{
         width: 100%;
-        height: calc(100% - 15vw);
-        border: solid 1px red;
+        height: calc(100% - 10px);
     }
 
 }
@@ -181,7 +139,7 @@
 
     .messages{
         width: 100%;
-        height: calc(100% - 15vw);
+        height: calc(100% - 10px);
         border: solid 1px red;
     }
 

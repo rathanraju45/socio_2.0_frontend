@@ -16,7 +16,7 @@ export default function Messages({ darkMode }) {
                 </div>
                 <div className="message-username">
                     <p>greyhat_rr_007</p>
-                    <p>Online</p>
+                    <p className="message-online-status">Online</p>
                 </div>
                 <div className="call-section">
                     <IoIosCall />

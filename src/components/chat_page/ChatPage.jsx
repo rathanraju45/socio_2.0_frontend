@@ -6,12 +6,12 @@ import './ChatPage.css';
 export default function ChatPage({ darkMode }) {
 
   const [chatHead, setChatHead] = useState('chats');
-  const [messagesDisplay, setMessagesDisplay] = useState(false);
+  const [messagesDisplay, setMessagesDisplay] = useState(true);
 
   return (
     <div id="chat-page">
 
-      <div className="chats">
+      <div className={"chats " + messagesDisplay ? " chatListHide" : " chatListDisplay"}>
         <div id="chat-heading">
           <p onClick={() => setChatHead('chats')} style={{
             color: chatHead === 'chats' ? '#ffc900' : '#ffffff'
@@ -20,7 +20,7 @@ export default function ChatPage({ darkMode }) {
             color: chatHead === 'random' ? '#ffc900' : '#ffffff'
           }}>Random</p>
         </div>
-        <div id="chats-list" className={messagesDisplay ? " chatListHide" : " chatListDisplay"}>
+        <div id="chats-list">
           <ChatItem darkMode={darkMode} />
           <ChatItem darkMode={darkMode} />
           <ChatItem darkMode={darkMode} />
