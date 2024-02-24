@@ -79,7 +79,7 @@ export default function Home() {
                         darkMode
                             ? navigationSize === 'max' ? socio_full_logo_black : socio_letter_black
                             : navigationSize === 'max' ? socio_full_logo_white : socio_letter_white
-                    } alt="" />
+                    } alt="socio_logo" />
                 </div>
 
                 <div className={"nav-item" + (activeNav === 0 ? " activeNav" : '')} onClick={() => handleNavClick(0)}>

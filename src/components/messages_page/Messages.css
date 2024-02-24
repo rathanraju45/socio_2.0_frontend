@@ -83,7 +83,7 @@
 
 .message-item{
     width: 50%;
-    margin: 0.5% 0;
+    margin: 1% 0;
     border-radius: 10px;
     min-height: 6%;
     display: flex;
@@ -92,6 +92,7 @@
 
 .message-item > p{
     width: 98%;
+    padding: 2%;
     min-height: 100%;
     height: max-content;
     display: flex;
@@ -146,7 +147,20 @@
 
     .call-section > svg{
         font-size: 7vw;
-        
+    }
+
+    .messages-section{
+        height: calc(100% - 12vw);
+    }
+
+    .message-item{
+        width: 65%;
+        margin: 4.5% 0;
+        min-height: 8%;
+    }
+
+    .message-item > p{
+        font-size: 5vw;
     }
 
 }
@@ -185,7 +199,19 @@
 
     .call-section > svg{
         font-size: 7vw;
-        
     }
 
+    .messages-section{
+        height: calc(100% - 12vw);
+    }
+
+    .message-item{
+        width: 70%;
+        margin: 3.5% 0;
+        min-height: 10%;
+    }
+
+    .message-item > p{
+        font-size: 3vw;
+    }
 }

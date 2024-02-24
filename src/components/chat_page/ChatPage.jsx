@@ -6,7 +6,7 @@ import './ChatPage.css';
 export default function ChatPage({ darkMode }) {
 
   const [chatHead, setChatHead] = useState('chats');
-  const [messagesDisplay, setMessagesDisplay] = useState(false);
+  const [messagesDisplay, setMessagesDisplay] = useState(true);
 
   return (
     <div id="chat-page">
