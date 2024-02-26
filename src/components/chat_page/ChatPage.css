@@ -76,6 +76,7 @@
 
 #chat-list-search::placeholder {
      font-size: 1.2vw;
+     color: var(--socio-color);
 }
 
 #chat-list-search:focus {
