@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link, Routes, Route, useLocation } from 'react-router-dom';
 import socio_full_logo_black from "../../assets/images/socio_home_logo_black_bg.png";
 import socio_full_logo_white from "../../assets/images/socio_home_logo_white_bg.png";
 import socio_letter_black from "../../assets/images/socio_letter_logo_black_bg.png";
@@ -31,13 +31,6 @@ export default function Home() {
 
     const [activeNav, setActiveNav] = useState(0);
     function handleNavClick(id) {
-        if(!isMobile){
-            if(id === 2){
-                setNavigationSize('min');
-            } else{
-                setNavigationSize('max');
-            }
-        }
         setActiveNav(id);
     };
 
@@ -51,6 +44,35 @@ export default function Home() {
             setNavigationSize('min');
         }
     }, [isMobile]);
+
+    // ends
+
+    // starts
+    // minimizing navsize if the location is chat and setting the activeNav
+
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.pathname.includes('/home')) {
+            setActiveNav(0);
+        } else if (location.pathname.includes('/search')) {
+            setActiveNav(1);
+        } else if (location.pathname.includes('/chat')) {
+            setActiveNav(2);
+        } else if (location.pathname.includes('/wathc')) {
+            setActiveNav(3);
+        } else if (location.pathname.includes('/profile')) {
+            setActiveNav(4);
+        }
+
+        if (!isMobile) {
+            if (location.pathname.includes('/chat')) {
+                setNavigationSize('min');
+            } else {
+                setNavigationSize('max');
+            }
+        }
+    }, [location]);
 
     // ends
 
@@ -90,35 +112,35 @@ export default function Home() {
                     } alt="socio_logo" />
                 </div>
 
-                <Link style={{color: darkMode ? "#ffffff" : "#000000"}} to="/" className={"nav-item" + (activeNav === 0 ? " activeNav" : '')} onClick={() => handleNavClick(0)}>
+                <Link style={{ color: darkMode ? "#ffffff" : "#000000" }} to="/" className={"nav-item" + (activeNav === 0 ? " activeNav" : '')} onClick={() => handleNavClick(0)}>
                     <div className="icon">
                         <IoMdHome />
                     </div>
                     <p className={navigationSize === 'max' ? "showP" : "hideP"}>Home</p>
                 </Link>
 
-                <Link style={{color: darkMode ? "#ffffff" : "#000000"}} to="/search" className={"nav-item" + (activeNav === 1 ? " activeNav" : '')} onClick={() => handleNavClick(1)}>
+                <Link style={{ color: darkMode ? "#ffffff" : "#000000" }} to="/search" className={"nav-item" + (activeNav === 1 ? " activeNav" : '')} onClick={() => handleNavClick(1)}>
                     <div className="icon">
                         <FaSearch />
                     </div>
                     <p className={navigationSize === 'max' ? "showP" : "hideP"}>Search</p>
                 </Link>
 
-                <Link style={{color: darkMode ? "#ffffff" : "#000000"}} to="/chat" className={"nav-item" + (activeNav === 2 ? " activeNav" : '')} onClick={() => handleNavClick(2)}>
+                <Link style={{ color: darkMode ? "#ffffff" : "#000000" }} to="/chat" className={"nav-item" + (activeNav === 2 ? " activeNav" : '')} onClick={() => handleNavClick(2)}>
                     <div className="icon">
                         <IoChatbubbleEllipsesSharp />
                     </div>
                     <p className={navigationSize === 'max' ? "showP" : "hideP"}>Chat</p>
                 </Link>
 
-                <Link style={{color: darkMode ? "#ffffff" : "#000000"}} to="/watch" className={"nav-item" + (activeNav === 3 ? " activeNav" : '')} onClick={() => handleNavClick(3)}>
+                <Link style={{ color: darkMode ? "#ffffff" : "#000000" }} to="/watch" className={"nav-item" + (activeNav === 3 ? " activeNav" : '')} onClick={() => handleNavClick(3)}>
                     <div className="icon">
                         <LuMonitorPlay />
                     </div>
                     <p className={navigationSize === 'max' ? "showP" : "hideP"}>Watch</p>
                 </Link>
 
-                <Link style={{color: darkMode ? "#ffffff" : "#000000"}} to="/profile" className={"nav-item" + (activeNav === 4 ? " activeNav" : '')} onClick={() => handleNavClick(4)}>
+                <Link style={{ color: darkMode ? "#ffffff" : "#000000" }} to="/profile" className={"nav-item" + (activeNav === 4 ? " activeNav" : '')} onClick={() => handleNavClick(4)}>
                     <div className="icon">
                         <img src={darkMode ? default_profile_black : defatult_profile_white} alt="profile-pic" />
                     </div>
@@ -176,9 +198,9 @@ export default function Home() {
                 </div>
 
                 <Routes>
-                    <Route path="/" element={ <HomeContent isMobile={isMobile} darkMode={darkMode} /> } />
-                    <Route path="/profile" element={ <Profile darkMode={darkMode} /> } />
-                    <Route path="/chat" element={ <ChatPage darkMode={darkMode} /> } />
+                    <Route path="/" element={<HomeContent isMobile={isMobile} darkMode={darkMode} />} />
+                    <Route path="/profile" element={<Profile darkMode={darkMode} />} />
+                    <Route path="/chat" element={<ChatPage darkMode={darkMode} />} />
                 </Routes>
 
             </div>

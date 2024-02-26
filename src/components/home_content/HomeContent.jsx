@@ -58,7 +58,7 @@ export default function HomeContent({ isMobile, darkMode }) {
                         uploaded={"2 days ago"}
                         saved={false}
                     />
-
+ 
 
                 </div>
             </div>
@@ -66,13 +66,7 @@ export default function HomeContent({ isMobile, darkMode }) {
                 display: isMobile ? 'none' : 'block',
                 borderLeft: darkMode ? "solid 1px white" : "solid 1px black"
             }}>
-                <p>sdfsdf</p>
-                <p>asdfsdfasdfsf</p>
-                <p>sdfs</p>
-                <p>df</p>
-                <p>df</p>
-                <p>df</p>
-                <p>sdf</p>
+                Wallet section
             </div>
 
         </div>

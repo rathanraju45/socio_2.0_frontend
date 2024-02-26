@@ -4,6 +4,9 @@ import defatult_profile_white from "../../assets/images/default_pic_white.png";
 import { IoIosCall } from "react-icons/io";
 import { FaVideo } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa6";
+import { IoSendSharp } from "react-icons/io5";
+import { FaMicrophone } from "react-icons/fa6";
+import { MdPermMedia } from "react-icons/md";
 import messages from './data';
 import './Messages.css';
 
@@ -44,9 +47,17 @@ export default function Messages({ darkMode }) {
                 <div ref={lastMessageRef} />
             </div>
             <div id="message-input">
-                
+                <input type="text" id="message-input" placeholder="Type the message..." style={{
+                    border: darkMode ? "solid 1px #ffffff" : "solid 1px #000000",
+                    backgroundColor: darkMode ? "#000000" : "#ffffff",
+                    color: darkMode ? "#ffffff" : "#000000"
+                }} />
+                <div id="message-input-icons">
+                    <IoSendSharp />
+                    <FaMicrophone />
+                    <MdPermMedia />
+                </div>
             </div>
-            {/* <input type="text" id="message-input" /> */}
         </div>
     )
 }
